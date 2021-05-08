@@ -1,5 +1,7 @@
-export { GigyaContext, useGigya } from "./context";
+export {GigyaContext, useGigya} from "./context";
 export {GigyaProvider} from "./gigyaProvider"
-export {AuthorizedView, NotAuthorizedView, useAuth} from "./useAuth"
-export {Screen, Screenset, useShowScreenset} from "./useScreenset"
+export { useAuth} from "./useAuth"
+export { AuthorizedView, NotAuthorizedView} from "./authorizationView"
+export { useShowScreenset} from "./useScreenset"
+export {Profile, RegistrationLogin, ScreenContainer, StandaloneScreen} from "./screens"
 

@@ -1,27 +1,17 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome'
-import faTwitter from '@fortawesome/fontawesome-free-brands/faTwitter'
-import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook'
-import faInstagram from '@fortawesome/fontawesome-free-brands/faInstagram'
-import faGithub from '@fortawesome/fontawesome-free-brands/faGithub'
- import {useGigya, AuthorizedView, NotAuthorizedView, Screen} from "../gigya";
- 
-const Profile = ({container}) => {
-    return <Screen screenSet="Default-ProfileUpdate" startScreen='gigya-update-profile-screen' container={container}/>
-}
+ import React from 'react';
+ import { 
+    AuthorizedView,
+    NotAuthorizedView, 
+    ScreenContainer,
+    Profile,
+    RegistrationLogin,
+    useAuth
+} from "../gigya";
 
-const SighUp = ({container}) => {
-    return <Screen screenSet="Default-RegistrationLogin" startScreen='gigya-register-screen' container={container}/>
-
-}        
-
-
- 
 
 function Main() {
-    const {logout} = useGigya();
-    let container ='gigya-main-screen';
+    const {logout} = useAuth();
+
     return (
         <div id="main">
 
@@ -30,18 +20,18 @@ function Main() {
                     <a href="#" onClick={logout}> Logout </a>
                 </AuthorizedView>
             </nav>
-
-       
-            <AuthorizedView>
+            
+            <ScreenContainer>
+                
+                <AuthorizedView>
+                    <Profile/>
+                </AuthorizedView>
  
-                <Profile container={container}/>
-            </AuthorizedView>
+                <NotAuthorizedView>
+                    <RegistrationLogin/>
+                </NotAuthorizedView> 
 
-            <NotAuthorizedView>
-                 <SighUp container={container}/>
-            </NotAuthorizedView>
-
-            <div id={container} />
+            </ScreenContainer>
 
 
         </div>
