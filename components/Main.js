@@ -5,16 +5,14 @@ import faTwitter from '@fortawesome/fontawesome-free-brands/faTwitter'
 import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook'
 import faInstagram from '@fortawesome/fontawesome-free-brands/faInstagram'
 import faGithub from '@fortawesome/fontawesome-free-brands/faGithub'
-import {Screenset, ScreensetContainer} from "../gigya/useScreenset";
-import {AuthorizationProvider, AuthorizedView, NotAuthorizedView, useAuth} from "../gigya/useAuth";
-import {useGigya} from "../gigya/context";
+ import {useGigya, AuthorizedView, NotAuthorizedView, Screen} from "../gigya";
  
 const Profile = ({container}) => {
-    return <ScreensetContainer screenSet="Default-ProfileUpdate" startScreen='gigya-update-profile-screen' container={container}/>
+    return <Screen screenSet="Default-ProfileUpdate" startScreen='gigya-update-profile-screen' container={container}/>
 }
 
 const SighUp = ({container}) => {
-    return <ScreensetContainer screenSet="Default-RegistrationLogin" startScreen='gigya-register-screen' container={container}/>
+    return <Screen screenSet="Default-RegistrationLogin" startScreen='gigya-register-screen' container={container}/>
 
 }        
 

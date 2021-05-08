@@ -12,7 +12,7 @@ export function useShowScreenset(screenSet, startScreen, containerID ) {
 }
  
 
-export function  ScreensetContainer({ screenSet, startScreen, container} ) {
+export function  Screen({ screenSet, startScreen, container} ) {
  
     const isLoaded = useShowScreenset(screenSet, startScreen,container )
     return  <></>
@@ -24,7 +24,7 @@ export function  Screenset({screenSet, startScreen} ) {
     const container = `gigya-screen-${screenSet}-${startScreen}`; 
     return  <div>
         <div id={container} />      
-        <ScreensetContainer screenSet={screenSet} startScreen={startScreen} container={container} /> 
+        <Screen screenSet={screenSet} startScreen={startScreen} container={container} /> 
     
     </div> 
 }
